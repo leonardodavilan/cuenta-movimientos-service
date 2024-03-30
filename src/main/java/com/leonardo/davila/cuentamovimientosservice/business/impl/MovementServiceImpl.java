@@ -57,7 +57,7 @@ public class MovementServiceImpl implements MovementService {
 	}
 
 	@Override
-	public Movement withdraw(int accountNumber, double amount, String username) {
+	public Movement withdraw(int accountNumber, double amount) {
 		Account account = accountDao.findById(accountNumber)
 				.orElseThrow(() -> new IllegalArgumentException("Account not found"));
 		double newBalance = account.getSaldoInicial() - amount;
@@ -70,7 +70,7 @@ public class MovementServiceImpl implements MovementService {
 	}
 
 	@Override
-	public Movement deposit(int accountNumber, double amount, String username) {
+	public Movement deposit(int accountNumber, double amount) {
 		Account account = accountDao.findById(accountNumber)
 				.orElseThrow(() -> new IllegalArgumentException("Account not found"));
 		double newBalance = account.getSaldoInicial() + amount;

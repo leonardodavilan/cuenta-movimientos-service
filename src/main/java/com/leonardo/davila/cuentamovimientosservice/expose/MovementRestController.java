@@ -52,13 +52,13 @@ public class MovementRestController {
 	}
 
 	@PostMapping("/retirar")
-	public ResponseEntity<Movement> withdraw(@RequestParam int accountNumber, @RequestParam double amount, @RequestParam String username) {
-		return ResponseEntity.ok().body(movimientoService.withdraw(accountNumber, amount, username));
+	public ResponseEntity<Movement> withdraw(@RequestParam int accountNumber, @RequestParam double amount) {
+		return ResponseEntity.ok().body(movimientoService.withdraw(accountNumber, amount));
 	}
 
 	@PostMapping("/depositar")
-	public ResponseEntity<Movement> deposit(@RequestParam int accountNumber, @RequestParam double amount, @RequestParam String username) {
-		return ResponseEntity.ok().body(movimientoService.deposit(accountNumber, amount, username));
+	public ResponseEntity<Movement> deposit(@RequestParam int accountNumber, @RequestParam double amount) {
+		return ResponseEntity.ok().body(movimientoService.deposit(accountNumber, amount));
 	}
 
 }

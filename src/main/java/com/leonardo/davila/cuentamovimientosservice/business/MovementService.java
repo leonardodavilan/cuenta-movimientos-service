@@ -8,6 +8,6 @@ public interface MovementService {
     Movement update(Long movimientoId, Movement movimiento);
     void deleteById(Long movimientoId);
     Movement getById(Long movimientoId);
-    Movement withdraw(int accountNumber, double amount, String username);
-    Movement deposit(int accountNumber, double amount, String username);
+    Movement withdraw(int accountNumber, double amount);
+    Movement deposit(int accountNumber, double amount);
 }
