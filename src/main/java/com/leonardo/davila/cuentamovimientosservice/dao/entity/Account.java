@@ -1,0 +1,26 @@
+package com.leonardo.davila.cuentamovimientosservice.dao.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Setter
+@Getter
+@Table(name = "cuenta")
+public class Account {
+
+    @Id
+    @Column(name = "numero_cuenta")
+    private int numeroCuenta;
+    @Column(name = "tipo_cuenta")
+    private String tipoCuenta;
+    @Column(name = "saldo_inicial")
+    private double saldoInicial;
+    private boolean estado;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "cliente_id")
+    private Customer cliente;
+}
