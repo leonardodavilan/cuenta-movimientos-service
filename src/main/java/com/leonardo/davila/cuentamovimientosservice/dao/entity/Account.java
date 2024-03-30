@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Setter
@@ -23,4 +24,7 @@ public class Account {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id")
     private Customer cliente;
+
+    @OneToMany(mappedBy = "cuenta", fetch = FetchType.EAGER)
+    private List<Movement> movimientos;
 }
