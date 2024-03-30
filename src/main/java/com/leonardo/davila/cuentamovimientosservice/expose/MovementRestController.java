@@ -51,4 +51,14 @@ public class MovementRestController {
 		}
 	}
 
+	@PostMapping("/retirar")
+	public ResponseEntity<Movement> withdraw(@RequestParam int accountNumber, @RequestParam double amount, @RequestParam String username) {
+		return ResponseEntity.ok().body(movimientoService.withdraw(accountNumber, amount, username));
+	}
+
+	@PostMapping("/depositar")
+	public ResponseEntity<Movement> deposit(@RequestParam int accountNumber, @RequestParam double amount, @RequestParam String username) {
+		return ResponseEntity.ok().body(movimientoService.deposit(accountNumber, amount, username));
+	}
+
 }
